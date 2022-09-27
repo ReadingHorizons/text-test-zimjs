@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ZIM Text Test</title>
+    <script src="js/createjs-1.3.4.js"></script>
+    <script src="js/zim-01.min.js"></script>
+</head>
+<body>
+    <script>
+        const frame = new Frame(FIT, 1366, 768, light, dark);
+        frame.on("ready", () => {
+            const label = new Label({
+                text:"Hello World",
+                color:red
+            }).center();
+            frame.stage.update();
+        });
+    </script>
+</body>
+</html>
