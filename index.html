@@ -10,11 +10,31 @@
     <script>
         const frame = new Frame(FIT, 1366, 768, light, dark);
         frame.on("ready", () => {
+            const stage = frame.stage;
+
             const label = new Label({
-                text:"Hello World",
-                color:red
+                text:"Howdy",
+                color:blue
             }).center();
-            frame.stage.update();
+            label.y -= 50;
+
+            const letters = new LabelLetters("Hello World", "center", "bottom", 5)
+                .center()
+                .animate({
+                    props:{scale:1.5, rotation:-10},
+                    wait:.5,
+                    time:.2,
+                    sequence:.05,
+                    rewind:true
+                });
+            letters.y += 50;
+            letters.labels[0].color = "#FF0000";
+            console.log(letters.labels[0].x);
+            console.log(letters.labels[4].x);
+            console.log(letters.labels[0].width);
+            console.log(letters.labels[4].width);
+
+            stage.update();
         });
     </script>
 </body>
